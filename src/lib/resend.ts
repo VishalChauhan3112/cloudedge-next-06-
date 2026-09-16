@@ -13,7 +13,7 @@ export async function notifyOwner(payload: EmailPayload) {
   await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
-      Authorization: `******
+      Authorization: ["Bearer", apiKey].join(" "),
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
